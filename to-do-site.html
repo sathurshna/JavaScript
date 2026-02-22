@@ -4,40 +4,40 @@
 
 
 <body>
-<h1>To Do List</h1>
-<input id="input">
-<button onclick="add()"> Add Task </button>
+    <h1>To Do List</h1>
+    <input id="input">
+    <button onclick="add()"> Add Task </button>
 
-<ul id="one">
-    <li>Maths Notes <button class="delete-btn" onclick="deletefn(event)"> Delete</button></li>
-</ul>
+    <ul id="one">
+        <li>Maths Notes <button class="delete-btn" onclick="deletefn(event)"> Delete</button></li>
+    </ul>
 
-<script>
-    function add(){
+    <script>
+        function add() {
 
-        //selecting ul
-        var ull=document.getElementById("one")
+            //selecting ul
+            var ull = document.getElementById("one")
 
-        var input=document.getElementById("input")
+            var input = document.getElementById("input")
 
-        var li = document.createElement("li")
-        li.textContent = input.value
+            var li = document.createElement("li")
+            li.textContent = input.value
 
-        var btn=document.createElement("button")
-        btn.textContent="Delete"
-        btn.className = "delete-btn"
+            var btn = document.createElement("button")
+            btn.textContent = "Delete"
+            btn.className = "delete-btn"
 
-        btn.onclick=function(){deletefn(event)}
+            btn.onclick = function () { deletefn(event) }
 
-        ull.appendChild(li)
-        li.appendChild(btn)
-    }
-    function deletefn(event){
-        event.target.parentNode.remove()
+            ull.appendChild(li)
+            li.appendChild(btn)
+        }
+        function deletefn(event) {
+            event.target.parentNode.remove()
 
 
-    }
-</script>
+        }
+    </script>
 
 </body>
 
