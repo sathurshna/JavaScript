@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monthly Mood Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <!-- LOGIN SECTION -->
+    <div id="loginSection" class="card">
+        <h2>Login to Track Your Mood 💭</h2>
+        <input type="text" id="usernameInput" placeholder="Enter your name">
+        <button onclick="login()">Login</button>
+    </div>
+
+    <!-- MAIN APP SECTION -->
+    <div id="appSection" class="card hidden">
+        <h2 id="welcomeText"></h2>
+
+        <h3>How are you feeling today?</h3>
+
+        <div class="buttons">
+            <button onclick="setMood('happy')">😊 Happy</button>
+            <button onclick="setMood('neutral')">😐 Neutral</button>
+            <button onclick="setMood('sad')">😢 Sad</button>
+            <button onclick="setMood('angry')">😡 Angry</button>
+        </div>
+
+        <p id="todayMessage"></p>
+
+        <button class="reportBtn" onclick="showMonthlyMoods()">📅 Show This Month</button>
+
+        <div id="monthlyReport"></div>
+
+        <button class="logoutBtn" onclick="logout()">Logout</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
