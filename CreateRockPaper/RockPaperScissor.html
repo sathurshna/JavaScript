@@ -1,0 +1,118 @@
+<!-- <h1>Rock Paper Scissor 🎮</h1>
+<p id="points">Points: 10</p>
+<button type="button" onclick="game()">Start Game</button>
+<link rel="stylesheet" href="style2.css">
+
+<script>
+
+    let total = 10
+
+    function game() {
+
+        if (total <= 0) {
+            console.log("Game Over 💀")
+            return
+        }
+
+        let random = Math.floor(Math.random() * 3)
+
+        let choices = ["rock", "paper", "scissor"]
+        let computer = choices[random]
+
+        let my = prompt("Enter Rock / Paper / Scissor : ")
+
+        if (!my) {
+            console.log("You cancelled.")
+            return
+        }
+
+        my = my.toLowerCase().trim()
+
+        console.log("Computer chose:", computer)
+
+        if (my === computer) {
+            console.log("Draw 🤝")
+        }
+        else if (
+            (my === "rock" && computer === "scissor") ||
+            (my === "paper" && computer === "rock") ||
+            (my === "scissor" && computer === "paper")
+        ) {
+            console.log("You Win 🎉")
+        }
+        else {
+            console.log("You Lose ❌")
+            total--
+        }
+
+        console.log("Points:", total)
+    }
+
+</script> -->
+<<!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Rock Paper Scissor</title>
+        <link rel="stylesheet" href="style2.css">
+    </head>
+
+    <body>
+
+        <h1>Rock Paper Scissor 🎮</h1>
+
+        <p id="result">Result will appear here</p>
+        <p id="computer">Computer choice: </p>
+        <p id="points">Points: 10</p>
+        <br>
+
+        <button type="button" onclick="game()">Start Game</button>
+
+        <script>
+
+            let total = 10
+
+            function game() {
+                document.getElementById("computer").style.display = "block";
+
+                if (total <= 0) {
+                    document.getElementById("result").innerText = "Game Over 💀"
+                    return
+                }
+
+                let random = Math.floor(Math.random() * 3)
+                let choices = ["rock", "paper", "scissor"]
+                let computer = choices[random]
+
+                let my = prompt("Enter Rock / Paper / Scissor : ")
+
+                if (!my) return
+
+                my = my.toLowerCase().trim()
+
+                document.getElementById("computer").innerText =
+                    "Computer choice: " + computer
+
+                if (my === computer) {
+                    document.getElementById("result").innerText = "Draw 🤝"
+                }
+                else if (
+                    (my === "rock" && computer === "scissor") ||
+                    (my === "paper" && computer === "rock") ||
+                    (my === "scissor" && computer === "paper")
+                ) {
+                    document.getElementById("result").innerText = "You Win 🎉"
+                }
+                else {
+                    document.getElementById("result").innerText = "You Lose ❌"
+                    total
+                }
+
+                document.getElementById("points").innerText =
+                    "Points: " + (Number(total) - 5)
+            }
+        </script>
+
+    </body>
+
+    </html>
